@@ -1,0 +1,22 @@
+<div id="<%= dom_id recipe %>">
+  <p>
+    <strong>Title:</strong>
+    <%= recipe.title %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= recipe.author %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= recipe.description %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+    <%= link_to recipe.image.filename, recipe.image if recipe.image.attached? %>
+  </p>
+
+</div>
