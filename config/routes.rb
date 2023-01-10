@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'privacy/index'
+  get 'imprint/index'
+  get 'categories/index'
+  get 'news/index'
   resources :recipes
   get 'home/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
