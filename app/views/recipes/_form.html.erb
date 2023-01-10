@@ -1,7 +1,7 @@
 <%= form_with(model: recipe) do |form| %>
   <% if recipe.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+      <h2><%= recipe.errors.count %> Fehler verhindern das Speichern:</h2>
 
       <ul>
         <% recipe.errors.each do |error| %>
@@ -12,26 +12,26 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
+    <%= form.label :title, "Titel", style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
   <div>
-    <%= form.label :author, style: "display: block" %>
+    <%= form.label :author, "Autor", style: "display: block" %>
     <%= form.text_field :author %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label :description, "Beschreibung", style: "display: block" %>
     <%= form.text_area :description %>
   </div>
 
   <div>
-    <%= form.label :image, style: "display: block" %>
+    <%= form.label :image, "Bild", style: "display: block" %>
     <%= form.file_field :image %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Neues Rezept erstellen" %>
   </div>
 <% end %>
