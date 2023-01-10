@@ -1,22 +1,16 @@
 <div id="<%= dom_id recipe %>">
+  <h3><%= recipe.title %></h3>
+
   <p>
-    <strong>Title:</strong>
-    <%= recipe.title %>
+    Eingetragen von <%= recipe.author %> am  <%= recipe.created_at.to_formatted_s(:long) %>
   </p>
 
   <p>
-    <strong>Author:</strong>
-    <%= recipe.author %>
+    <%= image_tag(url_for(recipe.image), size: "500x500") if recipe.image.attached? %>
   </p>
 
   <p>
-    <strong>Description:</strong>
     <%= recipe.description %>
-  </p>
-
-  <p>
-    <strong>Image:</strong>
-    <%= link_to recipe.image.filename, recipe.image if recipe.image.attached? %>
   </p>
 
 </div>
