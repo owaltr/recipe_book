@@ -32,6 +32,6 @@
   </div>
 
   <div>
-    <%= form.submit "Neues Rezept erstellen" %>
+    <%= form.submit recipe.persisted? ? "Speichern" : "Neues Rezept erstellen" %>
   </div>
 <% end %>
