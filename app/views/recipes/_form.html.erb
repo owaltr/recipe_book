@@ -11,27 +11,35 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, "Titel", style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="row mb-3">
+    <%= form.label :title, "Titel", class: "col-form-label col-2"%>
+    <div class="col">
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :author, "Autor", style: "display: block" %>
-    <%= form.text_field :author %>
+  <div class="row mb-3">
+    <%= form.label :author, "Autor", class: "col-form-label col-2" %>
+    <div class="col">
+      <%= form.text_field :author, class: "form-control" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :description, "Beschreibung", style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="row mb-3">
+    <%= form.label :description, "Beschreibung", class: "col-form-label col-2" %>
+    <div class="col">
+      <%= form.text_area :description, class: "form-control col-auto" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :image, "Bild", style: "display: block" %>
-    <%= form.file_field :image %>
+  <div class="row mb-3">
+    <%= form.label :image, "Bild", class: "col-form-label col-2" %>
+    <div class="col">
+      <%= form.file_field :image, class: "form-control" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.submit recipe.persisted? ? "Speichern" : "Neues Rezept erstellen" %>
+  <div class="offset-2">
+    <%= form.submit recipe.persisted? ? "Speichern" : "Neues Rezept erstellen", class: "btn btn-primary" %>
   </div>
 <% end %>

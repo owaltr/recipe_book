@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RecipeBook</title>
+    <title>Rezeptbuch</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,9 +13,12 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
+        <%= link_to "Home", root_path, class: class_names("navbar-brand", { active: current_page?(root_path) }) %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <%= link_to "Home", root_path, class: class_names("nav-link", { active: current_page?(root_path) }) %>
             <%= link_to "Aktuelles", news_index_path, class: class_names("nav-link", { active: current_page?(news_index_path) }) %>
             <%= link_to "Kategorien", categories_index_path, class: class_names("nav-link", { active: current_page?(categories_index_path) }) %>
             <%= link_to "Impressum", imprint_index_path, class: class_names("nav-link", { active: current_page?(imprint_index_path) }) %>
@@ -25,7 +28,8 @@
       </div>
     </nav>
 
-
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

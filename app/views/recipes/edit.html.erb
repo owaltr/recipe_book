@@ -1,10 +1,10 @@
-<h1>Editing recipe</h1>
+<h1>Rezept bearbeiten</h1>
 
 <%= render "form", recipe: @recipe %>
 
-<br>
+<hr>
 
-<div>
-  <%= link_to "Rezept anschauen", @recipe %> |
-  <%= link_to "Zurück zur Übersicht", root_path %>
+<div >
+  <%= link_to "Rezept anschauen", @recipe, class: "btn btn-secondary" %>
+  <%= link_to "Zurück zur Übersicht", root_path, class: "btn btn-secondary" %>
 </div>
