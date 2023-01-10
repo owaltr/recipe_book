@@ -1,0 +1,10 @@
+<div id="<%= dom_id recipe %>">
+  <h3>
+    <%= recipe.title %>
+  </h3>
+
+  <p>
+    <%= image_tag(url_for(recipe.image), size: "150x150") if recipe.image.attached? %>
+  </p>
+
+</div>

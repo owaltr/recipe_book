@@ -1,2 +1,9 @@
 <h1>Rezeptbuch</h1>
 <p>Willkommen im Rezeptbuch!</p>
+
+
+<div id="recipes">
+  <% @recipes.each do |recipe| %>
+    <%= render "recipe", recipe: recipe %>
+  <% end %>
+</div>
