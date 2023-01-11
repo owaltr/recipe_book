@@ -9,7 +9,18 @@
   <% end %>
 </ul>
 
-<div class="d-flex">
+<h5>Bewertung</h5>
+<% if @recipe.ratings.count.positive? %>
+  <% @recipe.rating.times do %>
+    <i class="bi bi-star-fill"></i>
+  <% end %>
+  <% (5 - @recipe.rating).times do %>
+    <i class="bi bi-star"></i>
+  <% end %>
+  <%= @recipe.ratings.count %> Bewertungen
+<% end %>
+
+<div class="d-flex mt-2">
   <%= link_to "Rezept bearbeiten", edit_recipe_path(@recipe), class: "btn btn-primary me-2" %>
   <%= link_to "Zurück zur Übersicht", root_path, class: "btn btn-secondary me-2" %>
   <%= button_to "Rezept löschen", @recipe, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Bist du sicher?" }, class: "btn btn-danger" %>

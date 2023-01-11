@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_10_162332) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_11_094620) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -49,6 +49,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_10_162332) do
     t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer "rate"
+    t.integer "recipe_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "index_ratings_on_recipe_id"
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string "title"
     t.string "author"
@@ -60,4 +68,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_10_162332) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "ingredients", "recipes"
+  add_foreign_key "ratings", "recipes"
 end

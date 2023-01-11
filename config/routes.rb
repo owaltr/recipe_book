@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :recipes do
     collection do
       get "ingredient_field"
+      get "rating_field"
     end
   end
   get 'home/index'

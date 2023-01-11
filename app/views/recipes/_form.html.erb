@@ -49,6 +49,16 @@
     <%= button_tag "Zutat hinzufügen", type: "button", class: "btn btn-secondary", data: { action: "render-response#getIngredientPartial" } %>
   </div>
 
+  <hr>
+  <h5>Bewertung</h5>
+  <div id="ratings" class="mb-3">
+    <%= render partial: "rating", collection: @recipe.ratings %>
+  </div>
+
+  <div class="mb-3">
+    <%= button_tag "Bewertung hinzufügen", type: "button", class: "btn btn-secondary", data: { action: "render-response#getRatingPartial" } %>
+  </div>
+
   <div class="offset-2">
     <%= form.submit recipe.persisted? ? "Speichern" : "Neues Rezept erstellen", class: "btn btn-primary" %>
   </div>

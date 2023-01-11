@@ -62,6 +62,10 @@ class RecipesController < ApplicationController
     render layout: false
   end
 
+  def rating_field
+    render layout: false
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
@@ -70,6 +74,6 @@ class RecipesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def recipe_params
-      params.require(:recipe).permit(:title, :author, :description, :image, ingredients_attributes: [:id, :title, :quantity, :unit])
+      params.require(:recipe).permit(:title, :author, :description, :image, ingredients_attributes: [:id, :title, :quantity, :unit], ratings_attributes: [:id, :rate])
     end
 end

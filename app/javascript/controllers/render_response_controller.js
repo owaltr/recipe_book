@@ -18,4 +18,17 @@ export default class extends Controller {
             ingredientsSection.appendChild(templateElement.content.firstElementChild);
         }
     }
+
+    async getRatingPartial () {
+        const response = await get("/recipes/rating_field");
+
+        if (response.ok) {
+            const body = await response.html;
+            const ratingSection = document.querySelector("#ratings");
+            const templateElement = document.createElement("template");
+            templateElement.innerHTML = body;
+
+            ratingSection.appendChild(templateElement.content.firstElementChild);
+        }
+    }
 }

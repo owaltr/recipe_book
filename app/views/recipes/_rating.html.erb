@@ -1,0 +1,11 @@
+<%= fields_for "recipe[ratings_attributes][#{rating.persisted? ? rating.id : Time.now.to_i }]", rating do |ff| %>
+  <fieldset class="">
+    <div class="row row-cols-lg-auto g-3 align-items-center">
+      <div class="col-12">
+        <%= ff.label :rate, "Bewertung"%>
+        <%= ff.select :rate, options_for_select(1..5, rating.rate), {}, class: "form-select" %>
+        <%= ff.hidden_field :id %>
+      </div>
+    </div>
+  </fieldset>
+<% end %>
