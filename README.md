@@ -1,24 +1,13 @@
-# README
+# Recipe Book
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Recipe Book is a simple app to store and rate recipes with their ingredients.
 
-Things you may want to cover:
+## Requirements
+To run this app you need Ruby 3.2.0 and a working Ruby on Rails Development Environment. Please refer to https://gorails.com/setup for further instructions.
 
-* Ruby version
+## Installation
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone this repository  ```git clone https://github.com/owaltr/recipe_book```
+2. Go to the new directory ```cd recipe_book```
+3. Install dependencies ```bundle install```
+4. Start the app ```bin/rails s```
