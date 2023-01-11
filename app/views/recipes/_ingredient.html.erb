@@ -1,0 +1,19 @@
+<%= fields_for "recipe[ingredients_attributes][#{ingredient.persisted? ? ingredient.id : Time.now.to_i }]", ingredient do |ff| %>
+  <fieldset class="">
+    <div class="row row-cols-lg-auto g-3 align-items-center">
+      <div class="col-12">
+        <%= ff.label :title, "Bezeichnung"%>
+        <%= ff.text_field :title, class: "form-control" %>
+        <%= ff.hidden_field :id %>
+      </div>
+      <div class="col-12">
+        <%= ff.label :quantity, "Menge" %>
+        <%= ff.text_field :quantity, class: "form-control" %>
+      </div>
+      <div class="col-12">
+        <%= ff.label :unit, "Einheit" %>
+        <%= ff.select :unit, [["g", "g"], ["ml", "ml"], ["EL", "EL"], ["TL", "TL"]], {}, class: "form-select" %>
+      </div>
+    </div>
+  </fieldset>
+<% end %>

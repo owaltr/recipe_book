@@ -2,6 +2,13 @@
 
 <%= render @recipe %>
 
+<h5>Zutaten</h5>
+<ul>
+  <% @recipe.ingredients.each do |ingredient| %>
+    <li><%= "#{ingredient.quantity} #{ingredient.unit} #{ingredient.title}" %></li>
+  <% end %>
+</ul>
+
 <div class="d-flex">
   <%= link_to "Rezept bearbeiten", edit_recipe_path(@recipe), class: "btn btn-primary me-2" %>
   <%= link_to "Zurück zur Übersicht", root_path, class: "btn btn-secondary me-2" %>

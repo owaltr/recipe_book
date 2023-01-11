@@ -1,4 +1,4 @@
-<%= form_with(model: recipe) do |form| %>
+<%= form_with(model: recipe, data: { controller: "render-response" }) do |form| %>
   <% if recipe.errors.any? %>
     <div style="color: red">
       <h2><%= recipe.errors.count %> Fehler verhindern das Speichern:</h2>
@@ -37,6 +37,16 @@
     <div class="col">
       <%= form.file_field :image, class: "form-control" %>
     </div>
+  </div>
+
+  <hr>
+  <h5>Zutaten</h5>
+  <div id="ingredients" class="mb-3">
+    <%= render partial: "ingredient", collection: @recipe.ingredients %>
+  </div>
+
+  <div class="mb-3">
+    <%= button_tag "Zutat hinzufügen", type: "button", class: "btn btn-secondary", data: { action: "render-response#getIngredientPartial" } %>
   </div>
 
   <div class="offset-2">

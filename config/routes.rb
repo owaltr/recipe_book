@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   get 'imprint/index'
   get 'categories/index'
   get 'news/index'
-  resources :recipes
+  resources :recipes do
+    collection do
+      get "ingredient_field"
+    end
+  end
   get 'home/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

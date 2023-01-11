@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
+    @recipe.ingredients.build
   end
 
   # GET /recipes/1/edit
@@ -57,6 +58,10 @@ class RecipesController < ApplicationController
     end
   end
 
+  def ingredient_field
+    render layout: false
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
@@ -65,6 +70,6 @@ class RecipesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def recipe_params
-      params.require(:recipe).permit(:title, :author, :description, :image)
+      params.require(:recipe).permit(:title, :author, :description, :image, ingredients_attributes: [:id, :title, :quantity, :unit])
     end
 end
